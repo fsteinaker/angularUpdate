@@ -1,0 +1,20 @@
+<br>
+<h2>Encontramos el siguiente empleado:</h2>
+<p>Nombre: {{nombre}}</p>
+<p>Apellido: {{apellido}}</p>
+<p>Edad: {{this.edad}}, por lo tanto {{edad>18 ? "es mayor de edad." : "es menor de edad."}}</p>
+<p>Profesion: {{profesion.value}}</p>
+<p>Ingrese su profesion: </p><input type="text" #profesion (keyup)="0">
+<p>Empresa contratante: {{empresa}}</p>
+{{textoRegistro}}
+<br><br>
+<!-- Binding propertie 
+Registrado: <input type="checkbox" id="registro" [checked]="usuRegistrado"> 
+{{getRegistroUsuario()}} -->
+Registrado: <input type="radio" value="si" name="nRegistro" [checked]="usuRegistrado" (click)="setUsuarioRegistro($event)">
+No registrado: <input type="radio" value="no" name="nRegistro" (click)="setUsuarioRegistro($event)">
+
+{{getRegistroUsuario()}}
+
+<br><br>
+Introduce la empresa: <input type="text" [(ngModel)]="empresa">
